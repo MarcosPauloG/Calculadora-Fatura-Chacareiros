@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Chacareiros</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Painel Chacareiros</h1>
+  <button id="themeBtn">🌙 Tema</button>
+</header>
+<main>
+  <section class="card" id="loginCard">
+    <h2>Login</h2>
+    <div class="grid">
+      <input id="username" placeholder="Usuário" />
+      <input id="password" type="password" placeholder="Senha" />
+    </div>
+    <button id="loginBtn">Entrar</button>
+    <p id="loginInfo"></p>
+  </section>
+
+  <section class="card" id="changePassCard" hidden>
+    <h2>Troca obrigatória de senha</h2>
+    <div class="grid">
+      <input id="currentPass" type="password" placeholder="Senha atual" />
+      <input id="newPass" type="password" placeholder="Nova senha alfanumérica" />
+    </div>
+    <button id="changePassBtn">Alterar senha</button>
+  </section>
+
+  <section class="card" id="appCard" hidden>
+    <h2>Lançamento único por data</h2>
+    <div class="grid">
+      <input id="dataUnica" type="date" />
+      <input id="referencia" placeholder="Referência (ex: MAI/2026)" />
+      <input id="n8nWebhook" placeholder="Webhook n8n (opcional)" />
+    </div>
+    <p>Defina a data uma vez e preencha somente valor/foto por chacareiro.</p>
+
+    <h3>Leituras e fotos</h3>
+    <div id="rows"></div>
+    <button id="saveBulk">Salvar leituras do dia</button>
+
+    <h3>Rateio da fatura</h3>
+    <div class="grid">
+      <input id="valorTotal" type="number" step="0.01" placeholder="Valor total (R$)" />
+      <input id="geralAnterior" type="number" placeholder="Leitura geral anterior" />
+      <input id="geralAtual" type="number" placeholder="Leitura geral atual" />
+    </div>
+    <button id="calc">Calcular rateio</button>
+  </section>
+
+  <section class="card" id="adminCard" hidden>
+    <h2>Painel Admin - reset de senha</h2>
+    <div class="grid">
+      <input id="targetUser" placeholder="Usuário para reset" />
+      <input id="adminPass" type="password" placeholder="Senha do admin" />
+    </div>
+    <button id="resetBtn">Resetar para senha padrão</button>
+  </section>
+
+  <section class="card" id="resultCard" hidden>
+    <h2>Resultado</h2>
+    <pre id="result"></pre>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
