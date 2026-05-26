@@ -1,0 +1,14 @@
+services:
+  api:
+    build: ./backend
+    container_name: chacareiros-api
+    ports:
+      - "8091:8091"
+
+  web:
+    build: ./frontend
+    container_name: chacareiros-web
+    depends_on:
+      - api
+    ports:
+      - "8090:8090"
