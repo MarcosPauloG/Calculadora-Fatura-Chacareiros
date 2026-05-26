@@ -119,3 +119,39 @@ docker compose down
 cd /opt/chacareiros-app
 docker compose down -v
 ```
+
+## 10) Publicar no GitHub/GitLab (push)
+
+Se "não subiu para o git", normalmente falta configurar o remoto.
+
+### Verificar remoto
+
+```bash
+git remote -v
+```
+
+Se não aparecer nada, configure:
+
+```bash
+git remote add origin <URL_DO_REPOSITORIO>
+```
+
+### Subir branch atual
+
+```bash
+git push -u origin HEAD
+```
+
+### Subir branch `main` (se estiver usando main)
+
+```bash
+git checkout main
+git push -u origin main
+```
+
+### Caso repositório remoto já tenha commits e dê conflito
+
+```bash
+git pull --rebase origin main
+git push -u origin main
+```
